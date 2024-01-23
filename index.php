@@ -1,21 +1,24 @@
 <?php
     require_once 'functions/db.php';
+    require_once 'templates/stylelink.php';
  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?php echo returnLink ("main"); ?>">
     <title>Education Platform</title>
 </head>
 <body>
     <?php 
+        
         require_once "templates/header.php";
     ?>
     <section class="promo">
-        <h1 class="promo__title">Лучший ресурс по заданиям!</h1>
-        <h2 class="promo__subtitle">Практикуйся в решении заданий разного уровня сложности</h2>
-        <div class="promo__text">Преподаватели и студенты признали наш ресурс №1</div>
+        <h1 class="promo__title">The best question bank!</h1>
+        <h2 class="promo__subtitle">Practice solving tasks of different difficulty levels</h2>
+        <div class="promo__text">Teachers and students have recognized our No. 1 resource</div>
         <div class="promo__wrap">
         <?php 
             $select = "SELECT `name` FROM `subject`";

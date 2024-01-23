@@ -1,16 +1,35 @@
 <?php
+    session_start();
     require_once '../db.php';
+    require_once '../form/helper.php';
 
-    if (!empty($_POST)) {
-          //достает по имени каждое поле и создает по нему одноименную переменую
-          $name = mysqli_real_escape_string($db,$_POST['name']);
-          $description = mysqli_real_escape_string($db,$_POST['description']);
-          $topic = mysqli_real_escape_string($db,$_POST['topic']);
+    $name = trim(strip_tags($_POST['SubTopicName'])) ?? null;
+    $description = trim(strip_tags($_POST['SubTopicDescription'])) ?? null;
+    $topic = trim(strip_tags($_POST['SelectedTopicName'])) ?? null;
+
+    $_SESSION['validation'] = [];
+
+    if ($name && $description && $topic) {
+
+            $select = "SELECT `name` FROM `subtopic` WHERE name = '$name'";
+            $query1 = mysqli_query($db,$select);
+            $gotName = mysqli_fetch_assoc($query1);
+            $reapetedCourseName = $gotName['name'] ?? null;
+            if ($reapetedCourseName == $name) {
+                addValidationError('SubTopicName', 'this subtopic already exist');
+                if (!empty($_SESSION['validation'])) {
+                    addOldValue('SubTopicName',$name);
+                    addOldValue('SubTopicDescription',$description);
+                }
+                redirect('/admin/admin.php');
             
-          $insert = "INSERT INTO subtopic (`name`, `description`, `topic`) VALUES('$name', '$description', '$topic')";
+            } else {
+                $insert = "INSERT INTO subtopic (`name`, `description`, `topic`) VALUES('$name', '$description', '$topic')";
       
-          $query = mysqli_query($db,$insert);
-      
-          if ($query) header('Location: /EducationPlatform/index.php');
+                $query = mysqli_query($db,$insert);
+            
+                if ($query) header('Location: /index.php');
+            }
+          
       }
 ?>

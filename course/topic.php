@@ -14,14 +14,15 @@ if (isset($_GET['name'])) {
     <div class="container">
         <?php foreach ($query as $topic) { ?>
             <div class="topics__topic">
-                <h3 class="topics__topic-title">Topic <?php echo $topic["name"]; ?></h3>
+                <h3 class="topics__topic-title">Topic: <?php echo $topic["name"]; ?></h3>
                 <?php
                     $topicName = $topic["name"];
                  $select2 = "SELECT name,  description FROM subtopic WHERE topic='$topicName'";
                     $query2 = mysqli_query($db, $select2); 
                     foreach ($query2 as $subtopic) { ?>
                 <div class="topics__topic-items">
-                    <div class="topics__topic-item">subTopic <?php echo $subtopic["name"]; ?></div>
+                    <div class="topics__topic-item">subTopic: <?php echo $subtopic["name"]; ?></div>
+                    <a href="/questions/questions.php?subtopicname=asdasd">click to see questions</a>
                 </div>
                 <?php }?>
             </div>

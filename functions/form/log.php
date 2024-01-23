@@ -11,13 +11,13 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     addOldValue('email', $email);
     addValidationError('email', 'Wrong email');
     setMessage('error', 'Validation error');
-    redirect('/EducationPlatform/auth/login.php');
+    redirect('/auth/login.php');
 }
 
 if (empty($password)) {
     addValidationError('password', 'Empty password');
     setMessage('error', 'empty password');
-    redirect('/EducationPlatform/auth/login.php');
+    redirect('/auth/login.php');
 }
 
 if ($email && $password) {
@@ -27,7 +27,7 @@ if ($email && $password) {
 
     if(!$user) {
         setMessage("error", "user $email not found");
-        redirect('/EducationPlatform/auth/login.php');
+        redirect('/auth/login.php');
         validationErrorAttr('email');
     } else {//нашелся пользователь с имейлом теперь проверка пароля
         if(!password_verify($password, $user['password'])) {
@@ -36,7 +36,7 @@ if ($email && $password) {
             $id = $user['id'];
             $_SESSION['user']['id'] = $id;
             setcookie('user',"22", time()+60*60*7);//
-            redirect('/EducationPlatform/user/profile.php');
+            redirect('/user/profile.php');
         }
     }
 

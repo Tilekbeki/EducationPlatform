@@ -17,4 +17,4 @@ if (isset($_GET['name'])) {
 ?>
 
 
-<a href="topic.php?name=<?php echo $course['name'] ?>">click</a>
+<a href="topic.php?name=<?php echo $course['name'] ?>">click to see the topics!</a>

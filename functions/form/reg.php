@@ -4,11 +4,11 @@ require_once '../db.php';
 require_once 'helper.php';
 
 
-$name = $_POST['name'] ?? null;
-$surname = $_POST['surname'] ?? null;
-$email = $_POST['email'] ?? null;
-$password = $_POST['password'] ?? null;
-$repeatedPassword = $_POST['repeatedPassword'] ?? null;
+$name = trim(strip_tags($_POST['name'])) ?? null;
+$surname = trim(strip_tags($_POST['surname'])) ?? null;
+$email = trim(strip_tags($_POST['email'])) ?? null;
+$password = trim(strip_tags($_POST['password'])) ?? null;
+$repeatedPassword = trim(strip_tags($_POST['repeatedPassword'])) ?? null;
 
 $_SESSION['validation'] = [];
 
@@ -58,7 +58,7 @@ if (!empty($_SESSION['validation'])) {
     addOldValue('name',$name);
     addOldValue('surname',$surname);
     addOldValue('email',$email);
-    redirect('/EducationPlatform/auth/register.php');
+    redirect('/auth/register.php');
 }
 
 $bcryptedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -71,7 +71,7 @@ try {
     if($name && $surname && $email && $password === $repeatedPassword && $password) {
         $query = mysqli_query($db,$insert);  
     }
-    if($query) redirect('/EducationPlatform/auth/login.php');
+    if($query) redirect('/auth/login.php');
 } catch (\Exception $e) {
     die($e->getMessage());
 }

@@ -60,14 +60,14 @@ function getMessage(string $key): string {
 
 function checkAuth() {
     if(!isset($_SESSION['user']['id']) || !isset($_COOKIE['user'])) {
-        redirect('/EducationPlatform');
+        redirect('/');
     }
 }
 
 
 function checkGuest() {
     if(isset($_SESSION['user']['id']) || isset($_COOKIE['user'])) {
-        redirect('/EducationPlatform');
+        redirect('/');
     }
 }
 ?>
