@@ -9,7 +9,7 @@
 
     if(empty($name)) {
         addValidationError('SubjectName', 'Wrong name');
-        redirect('/admin/admin.php');
+        redirect('/EducationPlatform/admin/admin.php');
     } 
     if ($name) {
         $select = "SELECT `name` FROM `subject` WHERE name = '$name'";
@@ -21,13 +21,13 @@
             if (!empty($_SESSION['validation'])) {
                 addOldValue('SubjectName',$name);
             }
-            redirect('/admin/admin.php');
+            redirect('/EducationPlatform/admin/admin.php');
         } else {
             $insert = "INSERT INTO subject (`name`) VALUES('$name')";
       
           $query = mysqli_query($db,$insert);
       
-          if ($query) header('Location: /index.php');
+          if ($query) header('Location: /EducationPlatform/index.php');
         }
       
           

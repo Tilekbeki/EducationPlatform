@@ -6,6 +6,9 @@
     $name = trim(strip_tags($_POST['SubTopicName'])) ?? null;
     $description = trim(strip_tags($_POST['SubTopicDescription'])) ?? null;
     $topic = trim(strip_tags($_POST['SelectedTopicName'])) ?? null;
+    
+    $metaKeywords = trim(strip_tags($_POST['SubTopicMetaKeywords'])) ?? null;
+    $metaDescription = trim(strip_tags($_POST['SubTopicMetaDescription'])) ?? null;
 
     $_SESSION['validation'] = [];
 
@@ -21,14 +24,14 @@
                     addOldValue('SubTopicName',$name);
                     addOldValue('SubTopicDescription',$description);
                 }
-                redirect('/admin/admin.php');
+                redirect('/EducationPlatform/admin/admin.php');
             
             } else {
-                $insert = "INSERT INTO subtopic (`name`, `description`, `topic`) VALUES('$name', '$description', '$topic')";
+                $insert = "INSERT INTO subtopic (`name`, `description`, `topic`, `metaKeywords`, `metaDescription`) VALUES('$name', '$description', '$topic', '$metaKeywords', '$metaDescription')";
       
                 $query = mysqli_query($db,$insert);
             
-                if ($query) header('Location: /index.php');
+                if ($query) header('Location: /EducationPlatform/admin/admin.php?do=subtopics');
             }
           
       }

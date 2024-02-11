@@ -1,0 +1,60 @@
+.course {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__title {
+        display: inline;
+        padding: 5px;
+        border: 2px solid #328828;
+        color: #328828;
+        border-radius: 4px;
+        margin-bottom: 30px;
+    }
+    &__subject-title {
+        display: inline-block;
+        padding: 5px;
+    }
+    &__content {
+        margin-top: 60px;
+        background:#fff;
+        padding: 60px 40px;
+        box-shadow: 0px 10px 10px #e7e7e7;
+        border-radius:10px;
+    }
+    &__descr {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    &__successTips {
+        margin-bottom: 30px;
+    }
+    &__topics{
+        &-item {
+            padding-left: 20px;
+            margin-bottom: 10px;
+            
+            
+        }
+        
+    }
+    &__item {
+        &-title {
+            display: flex;
+            gap: 5px;
+            span {
+                border:1px solid #000;
+                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20px;
+                height: 20px;
+            }
+    
+        }
+    }
+    &__getStart {
+        margin: 0 auto;
+        margin-top: 60px;
+        width: 100px;
+    }
+}

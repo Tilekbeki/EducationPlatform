@@ -26,13 +26,13 @@
                 addOldValue('CourseDescription',$description);
                 addOldValue('CourseSuccessTips',$successTips);
             }
-            redirect('/admin/admin.php');
+            redirect('/EducationPlatform/admin/admin.php');
         } else {
             $insert = "INSERT INTO course (`name`, `description`, `successTips`, `subject`) VALUES('$name', '$description', '$successTips', '$subject')";
       
             $query = mysqli_query($db,$insert);
             
-            if ($query) header('Location: /index.php');
+            if ($query) header('Location: /EducationPlatform/index.php');
         }
           
       }

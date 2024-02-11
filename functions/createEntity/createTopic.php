@@ -7,10 +7,12 @@
     $price = trim(strip_tags($_POST['TopicPrice'])) ?? null;
     $price = (int) $price;
     $course = trim(strip_tags($_POST['SelectedCourseName'])) ?? null;
+    $metaKeywords = trim(strip_tags($_POST['TopicMetaKeywords'])) ?? null;
+    $metaDescription = trim(strip_tags($_POST['TopicMetaDescription'])) ?? null;
 
     $_SESSION['validation'] = [];
 
-    if ($name && $price>=0 && $course) {
+    if ($name && $price>=0 && $course && $metaKeywords && $metaDescription) {
             $select = "SELECT `name` FROM `topic` WHERE name = '$name'";
             $query1 = mysqli_query($db,$select);
             $gotName = mysqli_fetch_assoc($query1);
@@ -23,13 +25,13 @@
                     addOldValue('TopicPrice',$price);
                     
                 }
-                redirect('/admin/admin.php');
+                redirect('/EducationPlatform/admin/admin.php');
             } else {
-                $insert = "INSERT INTO topic (`name`, `price`, `course`) VALUES('$name', '$price', '$course')";
+                $insert = "INSERT INTO topic (`name`, `price`, `course`, `metaKeywords`, `metaDescription`) VALUES('$name', '$price', '$course', '$metaKeywords', '$metaDescription')";
       
                 $query = mysqli_query($db,$insert);
             
-                if ($query) header('Location: /index.php');
+                if ($query) header('Location: /EducationPlatform/index.php');
             }
       
           
@@ -40,6 +42,6 @@
             addOldValue('TopicPrice',$price);
             
         }
-        redirect('/admin/admin.php');
+        redirect('/EducationPlatform/admin/admin.php');
       }
 ?>

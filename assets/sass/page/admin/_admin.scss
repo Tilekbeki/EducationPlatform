@@ -1,19 +1,42 @@
 .admin {
     &__hr {
-        background:#fff;
-        color:#fff;
         height: 0;
         border: 0;
-        border-top: 1px solid #ffffff;
         color: inherit;
+    }
+    &__btn {
+        
+        &-delete {
+            background: #c42817;
+            padding: 10px;
+            color:#fff;
+            border-radius: 2px;
+            text-decoration: none;
+            transition: all 0.5s;
+            &:hover {
+                background:#f96322;
+            }
+        }
+        &-edit {
+            background:#36317b;
+            padding: 10px;
+            color:#fff;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.5s;
+            &:hover {
+                background:#2295f9;
+            }
+        }
     }
     &__header {
         width: 100%;
         height: 50px;
-        border-bottom: 1px #fff solid;
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+        background:#fff;
+        border-bottom: 1px solid #d7d7d7;
         &-wrap {
             display: flex;
             justify-content: space-between;
@@ -23,29 +46,37 @@
         display: flex;
         justify-content: space-between;
         width: 50%;
-
+        
         &-item {
             list-style: none;
-            a {
-                color:#fff;
-            }
         }
     }
-    
-    &__subject {
+    &__wrap {
         padding: 30px 60px;
-        background: #253643;
         border-radius: 10px;
+        background:#fff;
+        box-shadow: 0px 10px 10px #e7e7e7;
+    }
+    &__list {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        gap: 30px;
         &-item {
+            padding-left: 20px;
+            padding-right: 10px;
             display: flex;
+            height: 60px;
+            align-items:center;
             justify-content: space-between;
+            border: 1px solid #747373;
+            border-radius: 10px;
         }
-        &-list {
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    }
+    &__subject {
+        
+        
         &-create {
             width: 100%;
             form {
@@ -59,5 +90,67 @@
         }
         
     }
+    &__title-create{
+        margin-bottom: 30px;
+    }
+//    &__create {
+//     form label {
+//         display: flex;
+//     }
+//    }
+}
+.section__wrap {
+    display: flex;
+    gap: 20px;
+    form {
+        width: 400px;
+    }
+}
 
+.select {
+    &__title{
+        &-course {
+            margin-left: 0px;
+            display: inline-block;
+            border:2px solid #4ba1ec;
+            padding: 5px;
+            border-radius:4px;
+        }
+        &-topic {
+            margin-left: 0px;
+            display: inline-block;
+            border:2px solid #002c52;
+            padding: 5px;
+            border-radius:4px;
+        }
+        &-subtopic {
+            margin-left: 0px;
+            display: inline-block;
+            border:2px solid #f97822;
+            padding: 5px;
+            border-radius:4px;
+        }
+        &-question {
+            margin-left: 0px;
+            display: inline-block;
+            border:2px solid #00ff6e;
+            padding: 5px;
+            border-radius:4px;
+        }
+    }
+    &__list {
+        &-course {
+            margin-left: 20px;
+            
+        }
+        &-topic {
+            margin-left: 20px;
+        }
+        &-subtopic {
+            margin-left: 20px;
+        }
+        &-question {
+            margin-left: 20px;
+        }
+    }
 }

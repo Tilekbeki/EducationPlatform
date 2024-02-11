@@ -58,7 +58,7 @@ if (!empty($_SESSION['validation'])) {
     addOldValue('name',$name);
     addOldValue('surname',$surname);
     addOldValue('email',$email);
-    redirect('/auth/register.php');
+    redirect('/EducationPlatform/auth/register.php');
 }
 
 $bcryptedPassword = password_hash($password, PASSWORD_BCRYPT);
@@ -71,7 +71,7 @@ try {
     if($name && $surname && $email && $password === $repeatedPassword && $password) {
         $query = mysqli_query($db,$insert);  
     }
-    if($query) redirect('/auth/login.php');
+    if($query) redirect('/EducationPlatform/auth/login.php');
 } catch (\Exception $e) {
     die($e->getMessage());
 }

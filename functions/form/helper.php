@@ -57,17 +57,18 @@ function getMessage(string $key): string {
     unset($_SESSION['message'][$key]);
     return $message;
 }
-
 function checkAuth() {
-    if(!isset($_SESSION['user']['id']) || !isset($_COOKIE['user'])) {
-        redirect('/');
+    if(!isset($_COOKIE['user'])) {
+        redirect('/EducationPlatform');
+    } else {
+        $_SESSION['user']['id'] =$_COOKIE['user'];
     }
 }
 
 
 function checkGuest() {
     if(isset($_SESSION['user']['id']) || isset($_COOKIE['user'])) {
-        redirect('/');
+        redirect('/EducationPlatform');
     }
 }
 ?>

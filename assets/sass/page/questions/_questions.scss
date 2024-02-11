@@ -5,12 +5,6 @@
     &__title {
         margin-top: 30px;
         margin-bottom: 30px;
-        background:#f96322;
-        color: #fff;
-        width: 270px;
-        border-radius:4px;
-        text-align: center;
-
     }
     &__list {
         display: flex;
@@ -28,13 +22,14 @@
         margin-bottom: 20px;
         background: #ffffff;
         border: 1px solid #d7d7d7;
-        padding: 4px 40px 4px 0px;
+        padding: 4px 10px 4px 10px;
         border-radius: 4px;
+        
         &-title {
             font-size: 20px;
         }
         &-question {
-            width: 350px;
+            width: 100%;
         }
         &-num {
             margin-top: 1px;
@@ -46,9 +41,11 @@
             width: 100%;
             justify-content: space-between;
             align-items:center;
+            flex-direction: column;
         }
         &-img {
             width: 100%;
+
         }
     }
     &__controllers {
@@ -65,7 +62,13 @@
             cursor: pointer;
             background:#36317b;
             color:#fff;
+            transition: all 0.5s;
             font-weight: 600;
+            &:hover {
+                color:#36317b;
+                border: 1px solid #36317b;
+                background:#fff;
+            }
         }
     }
     &__modal {
@@ -83,7 +86,8 @@
         &-content {
             width: 1152px;
             padding: 10px 20px;
-            min-height: 200px;
+            height: 600px;
+            overflow: scroll;
             background:#fff;
             border-radius:4px;
             display: flex;
@@ -92,11 +96,37 @@
         &-wrapp {
             display: flex;
             justify-content: space-between;
+            flex-direction: column;
         }
         &-close {
             cursor: pointer;
             font-size: 20px;
             font-weight: 600;
+        }
+    }
+    &__section {
+        padding: 10px 20px 10px 20px;
+        width: 100%;
+        display: flex;
+        &-item {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            
+        }
+        &-title {
+            font-weight: bold;
+        }
+    }
+    &__question{
+        &-img {
+            width: 100%;
+        }
+    }
+    &__section{
+        &-title {
+            display: flex;
+            height: 20px;
         }
     }
 }  
