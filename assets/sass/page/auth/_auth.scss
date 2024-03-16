@@ -1,0 +1,44 @@
+.auth {
+    &__header {
+        background: $main-color;
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        color:#fff;
+        font-weight: 600;
+        font-size: 36px;
+    }
+}
+.login {
+    .content-body {
+        display: flex;
+        form {
+            width: 500px;
+            margin: 0 auto;
+            input {
+                background: unset;
+            }
+        }
+    }
+    &__extra {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.signup {
+    .content-body {
+        display: flex;
+        form {
+            width: 500px;
+            margin: 0 auto;
+            input {
+                background: unset;
+            }
+        }
+    }
+}
+.welcome-text {
+    width: 50%;
+}

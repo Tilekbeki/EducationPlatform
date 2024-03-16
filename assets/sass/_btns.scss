@@ -1,0 +1,23 @@
+.button {
+    &_orange {
+        
+        height: 30px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.2s;
+        background: $main-color;
+        border: 2px solid $main-color;
+        
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            
+            border: 2px solid $main-color;
+            background: #ffffff;
+            color: $main-color;
+        }
+    }
+}

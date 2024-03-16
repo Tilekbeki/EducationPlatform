@@ -1,0 +1,57 @@
+.promo {
+    margin-bottom: 60px;
+    &__title {
+        margin: 0 auto;
+        text-align: center;
+        font-weight: 900;
+    }
+    &__subtitle {
+        text-align: center;
+        margin: 0 auto;
+    }
+    &__text {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+    &__wrap {
+        padding: 30px;
+        background:#fff;
+        border-radius: 10px;
+        box-shadow: 0px 10px 10px #e7e7e7;
+        &-title {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    }
+    &__subjects {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        &-title {
+            margin-bottom: 10px;
+        }
+        &-item {
+            border: 1px solid #d7d7d7;
+            width: 260px;
+            border-radius:10px;
+            padding: 32px 24px;
+        }
+    }
+    &__courses{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        &-item {
+            color: #328828;
+            text-decoration: none;
+            height: 30px;
+            font-weight: bold;
+            min-width: 50px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 2px solid #328828;
+        }
+    }
+}

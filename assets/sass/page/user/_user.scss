@@ -1,0 +1,134 @@
+.user {
+    .navbar {
+        padding: 5px 0;
+        background: #191919;
+        min-height: 50px;
+        margin-bottom: 60px;
+    } 
+    &-info {
+        &__greeting {
+            margin-bottom: 30px;
+        }
+    }
+    &__content {
+        margin-top: 60px;
+        display: flex;
+    }
+    &__menu {
+        width: 200px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }   
+    &__menu {
+        &-mobile {
+            display: none;
+        }
+        &-desctop {
+            display: flex;
+            gap: 10px;
+            list-style: none;
+            align-items:center;
+            color:#fff;
+        }
+    }
+    &__item {
+        a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.5s;
+            &:hover {
+                color:$main-color;
+            }
+        }
+        &-logout {
+            background:#191919;
+            border: 2px solid #36317b;
+            padding: 5px;
+            border-radius:2px;
+            color:#fff;
+            transition: all 0.5s;
+            &:hover {
+                background:#36317b;
+                border: 2px solid #36317b;
+                font-weight: bold;
+            }
+        }
+    }
+    &-topics {
+        display: flex;
+        padding-left: 10px;
+        gap: 20px;
+    }
+    .topic {
+        padding: 10px;
+        width: 200px;
+        border:#36317b 1px solid;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    &-profile {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 5px;
+        &__title {
+            margin-bottom: 20px;
+        }
+    
+        &__button {
+            background:$second-color;
+            height: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            text-decoration: none;
+            width: 350px;
+            border-radius:4px;
+            color:#fff;
+            transition: .5s all;
+            border:$second-color 2px solid;
+            &:hover {
+                
+                background: #fff;
+                color:$second-color;
+
+            }
+        }
+        &__subtitle {
+            color: gray;
+        }
+        &__header {
+            display: flex;
+            gap: 10px;
+            th {
+                width: 60px;
+            }
+        }
+        &__info {
+            display: flex;
+            gap: 10px;
+            td {
+                width: 100%;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            input {
+                border-radius:4px;
+                border: 1px solid gray;
+                height: 30px;
+                width: 350px;
+                padding: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.footer {
+    background:#131313;
+    padding: 60px 0 30px 0;
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    &__mainInfo {
+        color:#fff;
+    }
+    &__subjects {
+        color:#fff;
+        ul {
+            list-style: none;
+        }
+    }
+    &__general {
+        color: #fff;
+    }
+}
